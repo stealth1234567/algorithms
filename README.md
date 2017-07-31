@@ -1,2 +1,2 @@
-# binary-search
-Binary Search Implementations
+# algorithms
+Implementations of common algorithms, e.g. Binary Search, Selection Sort, the Euclidean Algorithm, etc...
