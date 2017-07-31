@@ -12,22 +12,21 @@ namespace BubbleSortProject
     // perform bubble sort on an array
     static int[] BubbleSort(int[] array, int endIndex)
     {
-      if(endIndex > 0)
+      if(endIndex == 0)
       {
-        for(int i = 0; i < endIndex; i++)
-        {
-          if(array[i] > array[i + 1]) 
-          {
-            Console.WriteLine("SWAP " + array[i] + " with " + array[i+1] + "\n");
-            int temp = array[i];
-            array[i] = array[i + 1];
-            array[i + 1] = temp;
-          }
-        }
-        endIndex = endIndex - 1;
-        BubbleSort(array, endIndex);
+        return array;
       }
-      return array;
+
+      for(int j = 0; j < endIndex; j++)
+      {
+        if(array[j] > array[j + 1])
+        {
+          int temp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = temp;
+        }
+      }
+      return BubbleSort(array, endIndex - 1);
     }
 
     static void Main(string[] args)
