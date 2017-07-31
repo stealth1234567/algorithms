@@ -9,7 +9,7 @@ namespace BubbleSortProject
 {
   class Program
   {
-    // perform binary search for a particular number in an array
+    // perform bubble sort on an array
     static int[] BubbleSort(int[] array, int endIndex)
     {
       if(endIndex > 0)
