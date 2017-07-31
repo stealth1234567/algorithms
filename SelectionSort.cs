@@ -9,7 +9,7 @@ namespace SelectionSortProject
 {
   class Program
   {
-    // perform binary search for a particular number in an array
+    // perform selection sort on an array
     static int[] SelectionSort(int[] array) {
       // for each position in array
       // compare with others to find smallest index
