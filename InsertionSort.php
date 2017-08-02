@@ -1,6 +1,4 @@
 <?php
-  $array = [26,54,93,17];
-  
   function InsertionSort($array, $startIndex) {
     if(count($array) === 1 || $startIndex >= count($array)) {
       return $array;
