@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
 
-namespace SololearnProject1
+namespace InsertionSortProject
 {
   class Program
   {
