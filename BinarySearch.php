@@ -1,6 +1,6 @@
 <?php
   function BinarySearch($array, $item, $firstIndex, $lastIndex) {
-    $middleIndex = round((($firstIndex + $lastIndex) / 2), 0, PHP_ROUND_HALF_DOWN);
+    $middleIndex = floor(($firstIndex + $lastIndex) / 2);
     $middleItem = $array[$middleIndex];
 
     if($firstIndex > $lastIndex) {
