@@ -9,32 +9,28 @@ namespace InsertionSortProject
 {
   class Program
   {
-    static int[] InsertionSort(int[] array, int startIndex)
-    {
-      if(array.Length == 1 || startIndex >= array.Length)
-      {
-        return array;
-      }
-
-      for(int i = startIndex; i > 0; i--)
-      {
-        if(array[i] < array[i - 1])
-        {
-          int temp = array[i - 1];
-          array[i - 1] = array[i];
-          array[i] = temp;
+    public static void InsertionSort(int[] array) {
+      // loop through from 1 to end
+      for(int i = 1; i < array.Length; i++) {
+        int currentElement = array[i];
+        int j = i - 1;
+        while(j >= 0 && (array[j] > currentElement)) {
+          array[j + 1] = array[j];
+          j--;
         }
+        array[j + 1] = currentElement;
       }
-      return InsertionSort(array, startIndex + 1);
+      return array;
     }
+    
 
-    static void Main(string[] args)
-    {
-      int[] myArray = { 2, 1, 10, 15, 5, 8, 8, 22, 0 };
-      myArray = InsertionSort(myArray, 1);
+    public static void Main(string[] args) {
+      int[] myArray = { 24, 3, 20, 18, 13 };
 
-      foreach(int item in myArray) {
-        Console.WriteLine(item);
+      InsertionSort(myArray);
+
+      foreach(int element in myArray) {
+        Console.WriteLine(element);
       }
     }
   }
