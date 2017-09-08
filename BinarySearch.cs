@@ -14,6 +14,7 @@ namespace BinarySearchProject
       int middleIndex = (firstIndex + lastIndex) / 2;
       int middleItem = array[middleIndex];
 
+      // avoid stack overflow error
       if(firstIndex > lastIndex)
       {
         return -1;
@@ -23,11 +24,11 @@ namespace BinarySearchProject
       {
         return middleIndex;
       }
-      else if(item > middleItem)
+      if(item > middleItem)
       {
         return BinarySearch(array, item, middleIndex+1, lastIndex);
       }
-      else if(item < middleItem)
+      if(item < middleItem)
       {
         return BinarySearch(array, item, firstIndex, middleIndex-1);
       }
