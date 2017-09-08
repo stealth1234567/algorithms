@@ -20,18 +20,6 @@ namespace InsertionSortProject
         }
         array[j + 1] = currentElement;
       }
-      return array;
-    }
-    
-
-    public static void Main(string[] args) {
-      int[] myArray = { 24, 3, 20, 18, 13 };
-
-      InsertionSort(myArray);
-
-      foreach(int element in myArray) {
-        Console.WriteLine(element);
-      }
     }
   }
 }
