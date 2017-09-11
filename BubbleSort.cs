@@ -9,33 +9,26 @@ namespace BubbleSortProject
 {
   class Program
   {
-    // perform bubble sort on an array
-    static int[] BubbleSort(int[] array, int endIndex)
+    public static void BubbleSort(int[] arr)
     {
-      if(endIndex == 0)
-      {
-        return array;
-      }
-
-      for(int j = 0; j < endIndex; j++)
-      {
-        if(array[j] > array[j + 1])
-        {
-          int temp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = temp;
+      int length = arr.Length;
+      for(int i = 1; i < length; i++) {
+        for(int j = 0; j < length - i; j++) {
+          if(arr[j] > arr[j+1]) {
+            int temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
         }
       }
-      return BubbleSort(array, endIndex - 1);
     }
 
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-      int[] myArray = { 26, 54, 93, 17, 77, 31, 44, 55, 20 };
-      myArray = BubbleSort(myArray, 8);
-      foreach(int num in myArray)
-      {
-        Console.WriteLine(num);
+      int[] array = { 70, 62, 25, 57, 91, 82, 11, 21, 14, 39 };
+      BubbleSort(array);
+      foreach(int element in array) {
+        Console.WriteLine(element);
       }
     }
   }
