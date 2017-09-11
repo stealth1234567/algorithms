@@ -8,8 +8,4 @@
 
     return $remainder + sumOfDigits($quotient);
   }
-
-  // TEST
-  $number = 13489;
-  echo sumOfDigits($number);
 ?>
