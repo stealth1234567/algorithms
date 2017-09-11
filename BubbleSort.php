@@ -1,22 +1,14 @@
 <?php
-  // Bubble Sort PHP Implementation
-  function BubbleSort(&$array, $endIndex) {
-    if($endIndex === 0) {
-      return $array;
-    }
-    for($i = 0; $i < $endIndex; $i++) {
-      if($array[$i] > $array[$i+1]) {
-        echo "SWAP {$array[$i]} with {$array[$i+1]}\n";
-        $temp = $array[$i];
-        $array[$i] = $array[$i+1];
-        $array[$i+1] = $temp;
+  function BubbleSort(&$arr) {
+    $length = count($arr);
+    for($i = 1; $i < $length; $i++) {
+      for($j = 0; $j < $length - $i; $j++) {
+        if($arr[$j] > $arr[$j+1]) {
+          $temp = $arr[$j];
+          $arr[$j] = $arr[$j + 1];
+          $arr[$j + 1] = $temp;
+        }
       }
     }
-    return BubbleSort($array, $endIndex - 1);
   }
-  
-  // TEST
-  $array = [ 26, 54, 93, 17, 77, 31, 44, 55, 20 ];
-  $myArray = BubbleSort($array, 8);
-  print_r($myArray);
 ?>
