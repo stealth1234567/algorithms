@@ -1,32 +1,18 @@
 <?php
-  function BinarySearch($array, $item, $firstIndex, $lastIndex) {
-    $middleIndex = floor(($firstIndex + $lastIndex) / 2);
-    $middleItem = $array[$middleIndex];
-
-    if($firstIndex > $lastIndex) {
-        return -1;
-    }
-
-    if($item == $middleItem) {
-        return $middleIndex;
-    }
-    else if($item > $middleItem) {
-        return BinarySearch($array, $item, $middleIndex+1, $lastIndex);
-    }
-    else if($item < $middleItem) {
-        return BinarySearch($array, $item, $firstIndex, $middleIndex-1);
+  function BinarySearch($arr, $key, $start, $end) {
+    $middle = floor(($start + $end) / 2); // need to use floor() in PHP
+    
+    if($start <= $end) {
+      if($arr[$middle] == $key) {
+        return $middle;
+      }
+      else if($arr[$middle] < $key) {
+        return BinarySearch($arr, $start, $middle+1, $end);
+      }
+      else {
+        return BinarySearch($arr, $key, $start, $middle-1);
+      }
     }
     return -1;
   }
-
-  // create array
-  $myArray = array();
-  $num = 1;
-  for($i = 0; $i < 10000; $i++) {
-    $myArray[$i] = $num;
-    $num++;
-  }
-
-  // execute function
-  echo BinarySearch($myArray, 156, 0, 9999);
 ?>
