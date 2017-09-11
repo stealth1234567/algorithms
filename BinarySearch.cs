@@ -9,53 +9,29 @@ namespace BinarySearchProject
 {
   class Program
   {
-    // perform binary search for a particular number in an array
-    static int BinarySearch(int[] array, int item, int firstIndex, int lastIndex) {
-      int middleIndex = (firstIndex + lastIndex) / 2;
-      int middleItem = array[middleIndex];
+    public static int binarySearch(int[] arr, int key, int start, int end)
+    {
+      if(start <= end) {
+        int middle = (start + end) / 2;
 
-      // avoid stack overflow error
-      if(firstIndex > lastIndex)
-      {
-        return -1;
-      }
-
-      if(item == middleItem)
-      {
-        return middleIndex;
-      }
-      if(item > middleItem)
-      {
-        return BinarySearch(array, item, middleIndex+1, lastIndex);
-      }
-      if(item < middleItem)
-      {
-        return BinarySearch(array, item, firstIndex, middleIndex-1);
+        if(arr[middle] == key) {
+          return middle;
+        }
+        else if(arr[middle] < key) {
+          return binarySearch(arr, key, middle+1, end);
+        }
+        else {
+          return binarySearch(arr, key, start, middle-1);
+        }
       }
       return -1;
     }
 
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-      int[] myArray = new int[10000];
-      int num = 1;
-
-      // populate the array
-      for(int i = 0; i < myArray.Length; i++)
-      {
-        myArray[i] = num;
-        num++;
-      }
-
-      // -- SPEED TEST -- //
-      var watch = System.Diagnostics.Stopwatch.StartNew();
-      
-      Console.WriteLine(BinarySearch(myArray, 9146, 0, 9999));
-      
-      watch.Stop();
-      var elapsedMs = watch.ElapsedMilliseconds;
-
-      Console.WriteLine("My Binary Search: " + elapsedMs);
+      int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+      int end = array.Length - 1;
+      Console.WriteLine(binarySearch(array, 4, 0, end));
     }
   }
 }
