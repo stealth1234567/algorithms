@@ -1,7 +1,5 @@
 # Algorithms
-Implementations of common algorithms, e.g. Binary Search, Selection Sort, The Euclidean Algorithm, etc...
-  
-Currently, algorithms are implemented in the following languages:
+Implementations of common algorithms in:
 - C#
 - Java
 - PHP
