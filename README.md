@@ -4,3 +4,7 @@ My implementations of common algorithms in:
 - Java
 - PHP
 - Python
+
+Coming soon:
+- C
+- C++
