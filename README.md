@@ -1,5 +1,5 @@
 # Algorithms
-Implementations of common algorithms in:
+My implementations of common algorithms in:
 - C#
 - Java
 - PHP
